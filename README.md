@@ -45,7 +45,8 @@ __주요기능(CRUD)__
 
 ### __사용방법__
 
-1. 실행을 누르고
+1. [실행을 누르고](http://localhost:8080/)
+
 2. localhost:8080 으로 들어가서
 
 <div class="test_image">
