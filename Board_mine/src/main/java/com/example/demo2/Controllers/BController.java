@@ -26,13 +26,7 @@ public class BController {
     private final FReposit fReposit;
 
 
-    @GetMapping("/create")
-    public String board(){
-        return "create";
-    }
-
-
-    @PostMapping("/save")
+    @PostMapping("/save") // -- 저장
     public String save(@ModelAttribute BDto dto, @RequestParam MultipartFile[] files) throws IOException {
         System.out.println("○ 게시글 저장 ○");
         services.save(dto, files);
@@ -40,7 +34,7 @@ public class BController {
         return "redirect:/board/paging";
     }
 
-    @GetMapping("/paging")
+    @GetMapping("/paging") // -- 게시판 페이지
     public String paging(@PageableDefault(page = 1) Pageable pageable, Model model){
         Page<BDto> boards = services.paging(pageable);
 
@@ -54,7 +48,7 @@ public class BController {
         return "paging";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") // -- 게시글 상세
     public String paginging(@PathVariable Long id, Model model, @PageableDefault(page = 1) Pageable pageable){
         BDto dto = services.findEntity(id);
         model.addAttribute("board",dto);
@@ -66,20 +60,13 @@ public class BController {
         return "detail";
     }
 
-    @GetMapping("/view/{id}")
-    public String contentdetail(@PathVariable Long id, Model model){
-        BDto bDto = services.findEntity(id);
-        model.addAttribute("board",bDto);
-        return "view";
-    }
-
-    @GetMapping("/delete/{id}")
+    @GetMapping("/delete/{id}") // -- 게시글 삭제
     public String deleteContents(@PathVariable Long id){
         services.deletecontent(id);
         return "redirect:/board/paging";
     }
 
-    @GetMapping("update/{id}")
+    @GetMapping("update/{id}") // -- 게시글 수정 페이지 출력
     public String updateContent(@PathVariable Long id, Model model){
         BDto dto = services.findEntity(id);
         model.addAttribute("board",dto);
@@ -88,7 +75,7 @@ public class BController {
     }
 
 
-    @PostMapping("edit/{id}")
+    @PostMapping("edit/{id}") // -- 게사글 수정 완료
     public String update(@PathVariable Long id,@ModelAttribute BDto dto){
         services.update(id,dto);
         System.out.println("○ 게시글 수정 ○");

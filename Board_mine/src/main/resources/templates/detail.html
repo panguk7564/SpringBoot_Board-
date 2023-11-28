@@ -16,7 +16,7 @@
         <td th:text="${board.getTitle}"></td>
     </tr>
     <tr>
-        <th>첨부파일: </th>
+        <th>사진: </th>
         <td>
             <div th:if="${files != null}">
                 <ul>
@@ -28,6 +28,16 @@
             </div>
         </td>
     </tr>
+
+    <div th:if="${files != null}">
+        <h3>첨부 파일</h3>
+        <ul>
+            <li th:each="file : ${files}">=
+                <a th:href="@{/download/{uuid}/{filename}(uuid=${file.uuid}, filename=${file.fileName})}">다운로드</a>
+            </li>
+        </ul>
+    </div>
+
     <tr>
         <th>내용: </th>
         <td th:text="${board.getContents}"></td>

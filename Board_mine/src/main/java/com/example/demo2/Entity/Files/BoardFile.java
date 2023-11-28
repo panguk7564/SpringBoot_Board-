@@ -22,7 +22,7 @@ public class BoardFile {
 
     private String fileType;
 
-    private String uuid;
+    private String uuid; // -- 중복되지 않는 식별 요소
 
     private Long fileSize;
 

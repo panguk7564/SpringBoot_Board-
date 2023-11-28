@@ -99,20 +99,18 @@ public class BServices {
                 board.getUpdateTime()));
     }
 
-    public BDto findEntity(Long id){
-        // if(repostit.findById(id),isPresent ....... 예외처리 생략
-        //Board board = repostit.findById(id).get();
+    public BDto findEntity(Long id){ // -- 컨트롤러에서 리포지토리를 쓰면 안되서 불러옴
         Optional<Board> board = repostit.findById(id);
         return BDto.boardDetail(board.get());
     }
 
-    @Transactional
+    @Transactional // -- Repository 기능 부여
     public void deletecontent(Long id){
         repostit.deleteById(id);
     }
 
     @Transactional
-    public Long update(Long id, BDto dto) {
+    public Long update(Long id, BDto dto) { // -- 해당 게시글 식별후 수정및 저장
         Board board = repostit.findById(id).orElseThrow(()->new IllegalArgumentException("해당 게시글이 없습니다. id = "+id));
         board.update(dto.getTitle(),dto.getContents(),board.getCreateTime());
 

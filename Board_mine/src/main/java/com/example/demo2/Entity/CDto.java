@@ -13,7 +13,7 @@ public class CDto {
     private Long id;
     private String writer;
     private String contents;
-    private Long boardId;
+    private Long boardId; // -- 해당 게시글 id 식별
 
     public Comment toEntity(){
         return Comment.builder()

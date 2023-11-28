@@ -18,7 +18,7 @@ public class CommentService {
     private final BRepostit bRepostit;
 
     @Transactional
-    public Comment save(CDto dto) {
+    public Comment save(CDto dto) { // -- DTO에 저장된 해당 엔티티의 정보를 가져와서 비교후 저장
         System.out.println(dto.getBoardId());
         Optional<Board> optionalBoard = bRepostit.findById(dto.getBoardId());
 
@@ -33,7 +33,7 @@ public class CommentService {
             return null;
         }
     }
-    public List<CDto> findAll(Long boardid) {
+    public List<CDto> findAll(Long boardid) { //-- 해당 보드에 입력된 모든 댓글을 리스트로 반환
         Board boardEntity = bRepostit.findById(boardid).get();
         List<Comment> commentList = reposit.findAllByBoardOrderByIdDesc(boardEntity);
 
