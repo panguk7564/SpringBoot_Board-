@@ -1,6 +1,6 @@
 package com.example.demo2.Entity.Files;
 
-import com.example.demo2.Entity.Board;
+import com.example.demo2.Entity.Boards.Board;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

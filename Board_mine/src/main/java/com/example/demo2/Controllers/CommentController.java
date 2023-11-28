@@ -1,7 +1,7 @@
 package com.example.demo2.Controllers;
 
-import com.example.demo2.Entity.CDto;
-import com.example.demo2.Entity.Comment;
+import com.example.demo2.Entity.Comments.CDto;
+import com.example.demo2.Entity.Comments.Comment;
 import com.example.demo2.Services.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

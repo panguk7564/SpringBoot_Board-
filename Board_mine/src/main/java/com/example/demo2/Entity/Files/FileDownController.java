@@ -14,16 +14,16 @@ import java.nio.file.Paths;
 @RestController
 public class FileDownController {
 
-    @GetMapping("/download/{uuid}/{fileName}") // --> 파일을 조회하고 불러오는 기능수행
+    @GetMapping("/download/{uuid}/{fileName}") // --> 파일 다운로드 기능
 
     public ResponseEntity<Resource> downloadFile(@PathVariable String uuid,
                                                  @PathVariable String fileName){
-        Path filepath = Paths.get("C:/Users/G/Desktop/DB_Files/"+uuid+fileName);
+        Path filepath = Paths.get("C:/Users/G/Desktop/DB_Files/"+uuid+fileName); // -- 경로설정 +파일이름(uuid + 파일이름)
 
         try{
             Resource ressource = new UrlResource(filepath.toUri());
             if(ressource.exists()|| ressource.isReadable()){
-                return ResponseEntity.ok().header(
+                return ResponseEntity.ok().header(   // -- 응답헤더에 파일 주소를 첨부하여 다운로드로 넘김
                         "Content-Disposition",
                         "attachment; fileName=\""+ ressource.getFilename()+ "\"")
                         .body(ressource);

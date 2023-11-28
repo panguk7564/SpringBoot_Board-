@@ -1,5 +1,6 @@
-package com.example.demo2.Entity;
+package com.example.demo2.Entity.Boards;
 
+import com.example.demo2.Entity.Comments.Comment;
 import com.example.demo2.Entity.Files.BoardFile;
 import lombok.Builder;
 import lombok.Getter;

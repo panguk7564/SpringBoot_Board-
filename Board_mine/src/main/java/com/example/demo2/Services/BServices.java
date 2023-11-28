@@ -1,6 +1,8 @@
 package com.example.demo2.Services;
 
-import com.example.demo2.Entity.*;
+import com.example.demo2.Entity.Boards.BDto;
+import com.example.demo2.Entity.Boards.BRepostit;
+import com.example.demo2.Entity.Boards.Board;
 import com.example.demo2.Entity.Files.BoardFile;
 import com.example.demo2.Entity.Files.FReposit;
 import lombok.RequiredArgsConstructor;
@@ -58,12 +60,13 @@ public class BServices {
 
                     String path = filePath + uuid + originFileName;
 
-                    file.transferTo(new File(path)); // -- 경로 저장
+                    file.transferTo(new File(path)); // -- 경로에 파일을 저장(파일이름: uuid+원본이름)
 
+                    dto.setCreateTime(LocalDateTime.now());
                     Long id = repostit.save(dto.toE()).getId(); // -- 저장후 pk 받아오기
                     Board board = repostit.findById(id).get();
 
-                    BoardFile boardFile = BoardFile.builder()
+                    BoardFile boardFile = BoardFile.builder() // -- 파일 객체 생성
                             .filePath(filePath)
                             .fileName(originFileName)
                             .uuid(uuid)
@@ -89,7 +92,7 @@ public class BServices {
         int page = pageable.getPageNumber() - 1; // - 시작 인덱스
         int size = 5; // -- 페이지 표시 게시물 개수
 
-        Page<Board> boards = repostit.findAll(PageRequest.of(page,size)); ///-- 전체게시물 불러오기(정렬해서)
+        Page<Board> boards = repostit.findAll(PageRequest.of(page,size)); ///-- 전체게시물 불러오기(정렬및 조건에 맞게[page, size]출력)
 
         return boards.map(board -> new BDto( // -- 람다 人
                 board.getId(),
@@ -99,7 +102,7 @@ public class BServices {
                 board.getUpdateTime()));
     }
 
-    public BDto findEntity(Long id){ // -- 컨트롤러에서 리포지토리를 쓰면 안되서 불러옴
+    public BDto findEntity(Long id){ // -- 컨트롤러에서 리포지토리 기능 전가
         Optional<Board> board = repostit.findById(id);
         return BDto.boardDetail(board.get());
     }
@@ -110,11 +113,11 @@ public class BServices {
     }
 
     @Transactional
-    public Long update(Long id, BDto dto) { // -- 해당 게시글 식별후 수정및 저장
+    public void update(Long id, BDto dto) { // -- 해당 게시글 식별후 수정및 저장
         Board board = repostit.findById(id).orElseThrow(()->new IllegalArgumentException("해당 게시글이 없습니다. id = "+id));
         board.update(dto.getTitle(),dto.getContents(),board.getCreateTime());
 
-        return repostit.save(board).getId();
+        repostit.save(board);
     }
 
 }

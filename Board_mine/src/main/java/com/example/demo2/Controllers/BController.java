@@ -1,6 +1,6 @@
 package com.example.demo2.Controllers;
 
-import com.example.demo2.Entity.BDto;
+import com.example.demo2.Entity.Boards.BDto;
 import com.example.demo2.Entity.Files.BoardFile;
 import com.example.demo2.Entity.Files.FReposit;
 import com.example.demo2.Services.BServices;

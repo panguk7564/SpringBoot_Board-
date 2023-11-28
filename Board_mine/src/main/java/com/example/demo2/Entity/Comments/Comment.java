@@ -1,5 +1,6 @@
-package com.example.demo2.Entity;
+package com.example.demo2.Entity.Comments;
 
+import com.example.demo2.Entity.Boards.Board;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

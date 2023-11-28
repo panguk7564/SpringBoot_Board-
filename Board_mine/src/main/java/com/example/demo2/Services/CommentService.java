@@ -1,6 +1,10 @@
 package com.example.demo2.Services;
 
-import com.example.demo2.Entity.*;
+import com.example.demo2.Entity.Boards.BRepostit;
+import com.example.demo2.Entity.Boards.Board;
+import com.example.demo2.Entity.Comments.CDto;
+import com.example.demo2.Entity.Comments.CReposit;
+import com.example.demo2.Entity.Comments.Comment;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
