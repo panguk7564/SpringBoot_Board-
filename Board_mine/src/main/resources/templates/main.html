@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메인</title>
+</head>
+<body>
+<br>
+<br>
+<button onclick="create()">쓰러 가볼까?</button>
+<button onclick="paging()">게시판으로 가자</button>
+</body>
+<script>
+    const create = () => {
+     location.href = "/board/create";
+    }
+
+    const paging = () => {
+     location.href = "/board/paging";
+    }
+</script>
+</html>
