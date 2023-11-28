@@ -41,3 +41,44 @@ __주요기능(CRUD)__
  - 예외처리
  - 람다식 활용
  <br>...
+
+
+### __사용방법__
+
+1. 실행을 누르고
+2. localhost:8080 으로 들어가서
+
+<div class="test_image">
+  <img src="./imgs/1.jpg">
+</div>
+3. 쓰러가볼까?<br>
+<br>
+4. 정보를 입력하고 파일을 첨부하고<br>
+
+<br>
+<div class="test_image">
+  <img src="./imgs/2.jpg">
+</div>
+5. 그러면 자동으로 게시판으로 이동합니다. 삭제 수정이 가능합니다.<br>
+
+<br>
+<div class="test_image">
+  <img src="./imgs/3.jpg">
+</div><br>
+
+<div class="test_image">
+  <img src="./imgs/6.jpg">
+</div>
+5-1. 요롷게
+
+<br>6. 들어가보면
+
+<div class="test_image">
+  <img src="./imgs/4.jpg">
+</div> <br>
+
+7. 댓글 작성도 가능
+
+<div class="test_image">
+  <img src="./imgs/5.jpg">
+</div> <br>

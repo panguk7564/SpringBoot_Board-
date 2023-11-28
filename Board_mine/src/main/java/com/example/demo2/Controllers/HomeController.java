@@ -10,7 +10,7 @@ public class HomeController { // -- html만 전환하는 컨트롤러만 따로 
         return "main";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/board/create")
     public String board(){
         return "create";
     }

@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 public class FileDownController {
 
     @GetMapping("/download/{uuid}/{fileName}") // --> 파일을 조회하고 불러오는 기능수행
+
     public ResponseEntity<Resource> downloadFile(@PathVariable String uuid,
                                                  @PathVariable String fileName){
         Path filepath = Paths.get("C:/Users/G/Desktop/DB_Files/"+uuid+fileName);
