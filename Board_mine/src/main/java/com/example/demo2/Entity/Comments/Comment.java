@@ -14,16 +14,16 @@ public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // -- pk
 
     @Column
-    private String writer;
+    private String writer; //-- 작성자
     @Column
-    private String contents;
+    private String contents; // -- 내용
 
     @ManyToOne
     @JoinColumn(name = "board_id")
-    private Board board;
+    private Board board; // -- 게시판 fk
 
     @Builder
     public Comment(Long id, String writer, String contents, Board board) {

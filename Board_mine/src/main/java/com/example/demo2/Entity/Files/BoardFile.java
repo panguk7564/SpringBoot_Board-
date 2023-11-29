@@ -14,17 +14,17 @@ public class BoardFile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // -- pk
 
-    private String filePath;
+    private String filePath; //-- 파일경로
 
-    private String fileName;
+    private String fileName; //-- 파일이름
 
-    private String fileType;
+    private String fileType; // -- 확장자
 
     private String uuid; // -- 중복되지 않는 식별 요소
 
-    private Long fileSize;
+    private Long fileSize; // -- 용량
 
     @ManyToOne
     @JoinColumn(name = "board_id")
