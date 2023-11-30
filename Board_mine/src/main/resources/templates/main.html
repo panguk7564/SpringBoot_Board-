@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>메인</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            color: #fff; /* 버튼의 글자색을 흰색으로 변경합니다. */
+            background-color: #006bff; /* 버튼의 배경색을 파란색으로 변경합니다. */
+            padding: 14px 20px;
+            margin: 8px 2px;
+            border: 2px solid black;
+            cursor: pointer;
+            width: 20%;
+        }
+        button:hover {
+            background-color: #0056b3; /* 버튼에 마우스를 올렸을 때의 배경색을 약간 어두운 파란색으로 변경합니다. */
+        }
+    </style>
 </head>
 <body>
 <br>
 <br>
-<button onclick="create()">쓰러 가볼까?</button>
-<button onclick="paging()">게시판으로 가자</button>
+<button onclick="create()">글 작성</button>
+<button onclick="paging()">게시판</button>
 </body>
 <script>
     const create = () => {

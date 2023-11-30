@@ -2,13 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>paging</title>
+    <title>게시판</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-
 <table>
     <button onclick="create()">글쓰기</button>
-
     <tr th:each="board: ${boardList}">
         <td th:text="${board.getId}"></td>
         <td><a th:href="@{${board.getId}|(page = ${boardList.number + 1})}" th:text="${board.getTitle()}"></a></td>
@@ -20,23 +28,15 @@
     </tr>
 </table>
 <a th:href="@{/board/paging(page=1)}">처음</a>
-
 <a th:href="${boardList.first} ? '#' : @{/board/paging(page=${boardList.number})}" th:unless="${boardList.first} and not boardList.empty">이전</a>
-
 <span th:each="page: ${#numbers.sequence(startPage, endPage)}">
-
     <span th:if="${page == boardList.number + 1 and not boardList.empty}" th:text="${page}"></span>
-
     <span th:unless="${page == boardList.number + 1 or boardList.empty}">
         <a th:href="@{/board/paging(page=${page})}" th:text="${page}"></a>
     </span>
 </span>
-
-
 <a th:href="${boardList.last} ? '#' : @{/board/paging(page=${boardList.number + 2})}" th:unless="${boardList.last} and not boardList.empty">다음</a>
-
 <a th:href="@{/board/paging(page=${boardList.totalPages})}">마지막</a>
-
 </body>
 <script>
     const create = () => {
@@ -44,3 +44,4 @@
     }
 </script>
 </html>
+

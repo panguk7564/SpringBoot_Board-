@@ -76,8 +76,8 @@ public class BController {
 
 
     @PostMapping("edit/{id}") // -- 게사글 수정 완료
-    public String update(@PathVariable Long id,@ModelAttribute BDto dto){
-        services.update(id,dto);
+    public String update(@PathVariable Long id,@ModelAttribute BDto dto, @RequestParam MultipartFile[] files) throws IOException{
+        services.update(id,dto,files);
         System.out.println("○ 게시글 수정 ○");
 
         return "redirect:/board/paging";

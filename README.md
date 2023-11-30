@@ -54,7 +54,7 @@ __2. [localhost:8080](http://localhost:8080/) 으로 들어가서__
   <img src="./imgs/1.jpg">
 </div>
 
-__3. 쓰러가볼까?__<br>
+__3. 작성하기를 누릅니다.__<br>
 <br>
 __4. 정보를 입력하고 파일을 첨부하고__<br>
 
@@ -72,20 +72,20 @@ __5. 그러면 자동으로 게시판으로 이동합니다. 삭제 수정이 �
 __5-1. 요롷게__
 
 <div class="test_image">
-  <img src="./imgs/6.jpg">
+  <img src="./imgs/4.jpg">
 </div>
 
 
 <br>__6. 들어가보면__
 
 <div class="test_image">
-  <img src="./imgs/4.jpg">
+  <img src="./imgs/5.jpg">
 </div> <br>
 
 __7. 댓글 작성도 가능합니다.__
 
 <div class="test_image">
-  <img src="./imgs/5.jpg">
+  <img src="./imgs/6.jpg">
 </div> <br>
 
 
