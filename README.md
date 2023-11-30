@@ -62,9 +62,7 @@ __4. 정보를 입력하고 파일을 첨부하고__<br>
   <img src="./imgs/2.jpg">
 </div>
 
-__5. 그러면 자동으로 게시판으로 이동합니다. 삭제 수정이 가능합니다.__<br>
-
-<br>
+<br>__5. 그러면 자동으로 게시판으로 이동합니다. 삭제 수정이 가능합니다.__
 <div class="test_image">
   <img src="./imgs/3.jpg">
 </div><br>
@@ -72,14 +70,14 @@ __5. 그러면 자동으로 게시판으로 이동합니다. 삭제 수정이 �
 __5-1. 요롷게__
 
 <div class="test_image">
-  <img src="./imgs/4.jpg">
+  <img src="./imgs/5.jpg">
 </div>
 
 
 <br>__6. 들어가보면__
 
 <div class="test_image">
-  <img src="./imgs/5.jpg">
+  <img src="./imgs/4.jpg">
 </div> <br>
 
 __7. 댓글 작성도 가능합니다.__
