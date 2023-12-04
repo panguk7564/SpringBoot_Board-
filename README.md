@@ -144,6 +144,15 @@ __업데이트 내역__
 -1.0.05 : 파일 첨부 구현 (11/24)
 
 -1.0.15 : view 시각화 업데이트 (11/26)
+
 -1.0.20 : 게시글 파일 수정구현(11/26)
 
 -13.0.25 : 댓글 저장시 게시글의 pk인식을 못하는 사항을  수정(11/27)
+
+<p align="center">
+  <img src="./image/111.png" alt="image_01"><br><br>
+  <img src="./image/222.png" alt="image_02"><br><br>
+  <img src="./image/333.png" alt="image_03"><br><br>
+  <img src="./image/444.jpg" alt="image_04"><br><br>
+  <img src="./image/555.png" alt="image_05" width="600" height="300"><br><br>
+  </p>

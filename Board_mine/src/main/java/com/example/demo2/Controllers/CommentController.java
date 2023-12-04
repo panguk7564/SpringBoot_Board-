@@ -18,7 +18,7 @@ public class CommentController {
     private final CommentService service;
 
     @PostMapping("/save")
-    public ResponseEntity save(@ModelAttribute CDto dto){ // -- 리스트로 반환된 댓글 엔티티를 모두 반환(댓글 출력)
+    public ResponseEntity save(@ModelAttribute CDto dto){ // -- 리스트로 반환된 댓글 엔티티를 모두 반환 (댓글 출력)
         Comment comment = service.save(dto);
 
         List<CDto> all = service.findAll(dto.getBoardId());
