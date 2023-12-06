@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <title>게시판</title>
     <style>
-        table {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-        }
+
+                footer {
+             background-color: #006bff;
+             padding: 10px;
+             color: #fff;
+             position: fixed;
+             left: 0;
+             bottom: 0;
+             width: 100%;
+             text-align: center;
+         }
+
+         table {
+             border: 1px solid black;
+             border-collapse: collapse;
+         }
+         th, td {
+             border: 1px solid black;
+             padding: 10px;
+         }
     </style>
 </head>
 <body>
@@ -27,6 +39,9 @@
         </td>
     </tr>
 </table>
+
+
+
 <a th:href="@{/board/paging(page=1)}">처음</a>
 <a th:href="${boardList.first} ? '#' : @{/board/paging(page=${boardList.number})}" th:unless="${boardList.first} and not boardList.empty">이전</a>
 <span th:each="page: ${#numbers.sequence(startPage, endPage)}">
@@ -37,11 +52,16 @@
 </span>
 <a th:href="${boardList.last} ? '#' : @{/board/paging(page=${boardList.number + 2})}" th:unless="${boardList.last} and not boardList.empty">다음</a>
 <a th:href="@{/board/paging(page=${boardList.totalPages})}">마지막</a>
-</body>
+
+<footer>
+    <p>GreenComAcademy</p>
+</footer>
 <script>
     const create = () => {
         location.href = "/board/create";
     }
 </script>
+</body>
 </html>
+
 

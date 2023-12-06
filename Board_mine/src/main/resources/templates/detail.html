@@ -5,61 +5,79 @@
     <title>게시글 상세</title>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-        }
-        table {
-            border-collapse: collapse;
-            width: 70%;
-            margin: 20px auto;
-            border: 1px solid black;
-        }
-        th {
+        #header {
             background-color: #006bff;
-            color: #fff;
             padding: 10px;
-            border: 1px solid black;
-        }
-        td {
-            padding: 10px;
-            border: 1px solid black;
-        }
-        button {
             color: #fff;
-            background-color: #006bff;
-            border: 1px solid black;
-            padding: 8px 16px;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin: 4px 2px;
-            cursor: pointer;
         }
-        #comment-write {
-            margin-bottom: 10px;
+
+        #footer {
+            background-color: #006bff;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
         }
-        #comment-write input[type=text] {
-            width: 100%;
-            padding: 8px 16px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        #comment-write-btn {
-            width: 5%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 16px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-        }
+
+                       body {
+                           background-color: white;
+                           color: black;
+                           font-family: Arial, sans-serif;
+                       }
+                       table {
+                           border-collapse: collapse;
+                           width: 70%;
+                           margin: 20px auto;
+                           border: 1px solid black;
+                       }
+                       th {
+                           background-color: #006bff;
+                           color: #fff;
+                           padding: 10px;
+                           border: 1px solid black;
+                       }
+                       td {
+                           padding: 10px;
+                           border: 1px solid black;
+                       }
+                       button {
+                           color: #fff;
+                           background-color: #006bff;
+                           border: 1px solid black;
+                           padding: 8px 16px;
+                           text-align: center;
+                           text-decoration: none;
+                           display: inline-block;
+                           font-size: 14px;
+                           margin: 4px 2px;
+                           cursor: pointer;
+                       }
+                       #comment-write {
+                           margin-bottom: 10px;
+                       }
+                       #comment-write input[type=text] {
+                           width: 100%;
+                           padding: 8px 16px;
+                           margin: 8px 0;
+                           display: inline-block;
+                           border: 1px solid #ccc;
+                           box-sizing: border-box;
+                       }
+                       #comment-write-btn {
+                           width: 5%;
+                           background-color: #4CAF50;
+                           color: white;
+                           padding: 10px 16px;
+                           margin: 30px 0;
+                           border: none;
+                           cursor: pointer;
+                       }
     </style>
+
 </head>
+<div id="header">
+    <h1>Spring_boot: Board Project</h1>
+</div>
 <body>
 <table>
     <tr>
@@ -126,6 +144,9 @@
             <td th:text="${comment.contents}"></td>
         </tr>
     </table>
+</div>
+<div id="footer">
+    <p>GreenComAcademy</p>
 </div>
 </body>
 <script th:inline="javascript">

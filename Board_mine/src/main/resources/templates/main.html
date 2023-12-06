@@ -9,33 +9,61 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+
+        header {
+            background-color: #006bff;
+            padding: 20px;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #006bff;
+            padding: 10px;
+            color: #fff;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
         button {
-            color: #fff; /* 버튼의 글자색을 흰색으로 변경합니다. */
-            background-color: #006bff; /* 버튼의 배경색을 파란색으로 변경합니다. */
+            color: #fff;
+            background-color: #006bff;
             padding: 14px 20px;
             margin: 8px 2px;
             border: 2px solid black;
             cursor: pointer;
             width: 20%;
         }
+
         button:hover {
-            background-color: #0056b3; /* 버튼에 마우스를 올렸을 때의 배경색을 약간 어두운 파란색으로 변경합니다. */
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
+<header>
+    <h1>Spring_boot: Board Project</h1>
+</header>
+
 <br>
 <br>
 <button onclick="create()">글 작성</button>
 <button onclick="paging()">게시판</button>
-</body>
+
+<footer>
+    <p>GreenComAcademy</p>
+</footer>
+
 <script>
     const create = () => {
-     location.href = "/board/create";
+        location.href = "/board/create";
     }
 
     const paging = () => {
-     location.href = "/board/paging";
+        location.href = "/board/paging";
     }
 </script>
+</body>
 </html>
+
